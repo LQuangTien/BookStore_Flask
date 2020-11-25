@@ -16,6 +16,10 @@ def index():
     return render_template('store/index.html')
 
 
+@app.route("/products")
+def products():
+    return render_template('store/products.html')
+
 @app.errorhandler(404)
 def notFound(e):
     return render_template('store/404.html'), 404
