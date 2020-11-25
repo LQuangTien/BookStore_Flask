@@ -15,19 +15,19 @@
 	</script>
 <!-- //script-for sticky-nav -->
 <!-- flexSlider -->
-				<link rel="stylesheet" href="{{ url_for('static',filename='css/flexslider.css') }}" type="text/css" media="screen" property="" />
-				<script defer src="js/jquery.flexslider.js"></script>
-				<script type="text/javascript">
-				$(window).load(function(){
-				  $('.flexslider').flexslider({
-					animation: "slide",
-					start: function(slider){
-					  $('body').removeClass('loading');
-					}
-				  });
-				});
-			  </script>
-			<!-- //flexSlider -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='css/flexslider.css') }}" type="text/css" media="screen" property="" />
+	<script defer src="{{ url_for('static', filename='js/jquery.flexslider.js') }}"></script>
+	<script type="text/javascript">
+	$(window).load(function(){
+		$('.flexslider').flexslider({
+		animation: "slide",
+		start: function(slider){
+			$('body').removeClass('loading');
+		}
+		});
+	});
+	</script>
+<!-- //flexSlider -->
 <!-- Bootstrap Core JavaScript -->
 <script src=" {{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
 <script>

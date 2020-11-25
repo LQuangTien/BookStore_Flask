@@ -10,16 +10,30 @@
     {% include 'blocks/style.html' %}
 </head>
 <body>
-{% include 'blocks/header.html' %}
+    {% include 'blocks/header.html' %}
+    <!-- products-breadcrumb -->
+    {%- macro breadcrumbs(breadcrumb) -%}
+    <div class="products-breadcrumb">
+        <div class="container">
+          <ul>
+            <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.html">Home</a><span>|</span></li>
+            <li>{{breadcrumb}}</li>
+          </ul>
+        </div>
+    </div>
+    {%- endmacro %}
+    {{ breadcrumbs(breadcrumb) }}
+    <!-- //products-breadcrumb -->
     <div class="banner">
         {% include 'blocks/navbar.html' %}
-        {% include 'blocks/slider.html' %}
-        <div>
-    {% block bannerbottom %}
-    {% endblock %}
+        <div class="w3l_banner_nav_right">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    {% block bannerbottom %}{% endblock %}
 
-    {% block content %}
-    {% endblock %}
+    {% block subcontent %}{% endblock %}
 
     {% include 'blocks/footer.html' %}
     {% include 'blocks/script.html' %}
